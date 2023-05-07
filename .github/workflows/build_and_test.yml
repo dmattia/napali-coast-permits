@@ -1,0 +1,27 @@
+name: Build and Test on Pull Request
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  build-typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: ./.github/commands/yarn_install
+      - run: yarn tsc --build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: yarn prettier --write "src/**/*.ts"
+      - name: Check for changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes detected"
+          else
+            echo "Changes detected"
+            exit 1
+          fi

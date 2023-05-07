@@ -1,0 +1,7 @@
+name: Napali-App-Infra
+description: Infra created for finding Napali Coast permits
+runtime:
+  name: nodejs
+  options:
+    typescript: true
+main: src/infra

@@ -1,0 +1,37 @@
+{
+  "name": "@napali/main",
+  "packageManager": "yarn@3.5.1",
+  "resolutions": {
+    "@pulumi/pulumi": "npm:@transcend-io/pulumi@=1.0.5"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.100.0",
+    "@aws-sdk/client-ssm": "^3.100.0",
+    "@pulumi/aws": "^5.6.0",
+    "@pulumi/pulumi": "^3.32.3",
+    "aws-lambda": "^1.0.7",
+    "bluebird": "^3.7.2",
+    "esbuild": "^0.17.18",
+    "got": "^12.5.3",
+    "lodash": "^4.17.21",
+    "node-html-parser": "^6.1.5",
+    "twilio": "^3.84.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.78",
+    "@types/bluebird": "^3.5.38",
+    "@types/eslint": "^8",
+    "@types/lodash": "^4",
+    "@types/node": "=14.14.31",
+    "@types/prettier": "^2",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^2.8.8",
+    "ts-node": "=10.4.0",
+    "typescript": "*"
+  }
+}
