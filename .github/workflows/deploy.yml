@@ -23,3 +23,9 @@ jobs:
       # Install Pulumi and deploy the infra code
       - uses: pulumi/action-install-pulumi-cli@v1.0.1
       - run: yarn workspace @napali/main exec pulumi up --stack prod --yes --refresh
+        env:
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
+          RECIPIENT_NUMBERS: ${{ secrets.RECIPIENT_NUMBERS }}
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
