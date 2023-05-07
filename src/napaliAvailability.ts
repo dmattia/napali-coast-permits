@@ -25,8 +25,9 @@ export const napaliAvailabilityHandler: LambdaHandler<
   void
 > = async (event, context, { dynamoClient, ssmClient }) => {
   // Request the data from their API in their strange format
+  const currentEpoch = (new Date() as unknown as number) / 1;
   const { body } = await got.get(
-    `https://camping.ehawaii.gov/camping/all,sites,0,25,1,${KAUAI_ID},,,,${START_DATE},${DAYS_TO_SEARCH},,,1,1683343883421.html`
+    `https://camping.ehawaii.gov/camping/all,sites,0,25,1,${KAUAI_ID},,,,${START_DATE},${DAYS_TO_SEARCH},,,1,${currentEpoch}.html`
   );
 
   // Find the date names from the table header row
