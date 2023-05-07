@@ -16,7 +16,7 @@ interface Config {
 }
 
 const KAUAI_ID = 1692;
-const START_DATE = "20220521";
+const START_DATE = "20230521";
 const DAYS_TO_SEARCH = 5;
 
 export const napaliAvailabilityHandler: LambdaHandler<
@@ -26,7 +26,7 @@ export const napaliAvailabilityHandler: LambdaHandler<
 > = async (event, context, { dynamoClient, ssmClient }) => {
   // Request the data from their API in their strange format
   const { body } = await got.get(
-    `https://camping.ehawaii.gov/camping/all,sites,1,500,1,${KAUAI_ID},,,,${START_DATE},${DAYS_TO_SEARCH},,,1,0.html`
+    `https://camping.ehawaii.gov/camping/all,sites,0,25,1,${KAUAI_ID},,,,${START_DATE},${DAYS_TO_SEARCH},,,1,1683343883421.html`
   );
 
   // Find the date names from the table header row
