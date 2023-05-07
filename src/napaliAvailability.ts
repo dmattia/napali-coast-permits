@@ -88,15 +88,15 @@ export const napaliAvailabilityHandler: LambdaHandler<
     )}`
   );
 
-    // Exit if there is no new information
-    if (
-      row.availability.every(
-        ({ available, date }) => knownInfoMap.get(date) === available
-      )
-    ) {
-      console.log(`There is no new information, exiting.`);
-      return;
-    }
+  // Exit if there is no new information
+  if (
+    row.availability.every(
+      ({ available, date }) => knownInfoMap.get(date) === available
+    )
+  ) {
+    console.log(`There is no new information, exiting.`);
+    return;
+  }
 
   // Update the database with these latest values
   console.log("Updating database with new values");

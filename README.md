@@ -4,6 +4,10 @@ Use Github Codespaces to open this repo, it will come with pulumi, node, yarn, e
 
 yarn
 
+# To lint
+
+yarn prettier --write "src/**/*.ts"
+
 # To deploy
 
 yarn workspace @napali/main exec pulumi up --stack prod
