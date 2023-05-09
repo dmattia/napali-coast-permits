@@ -16,8 +16,8 @@ interface Config {
 }
 
 const KAUAI_ID = 1692;
-const START_DATE = "20230521";
-const DAYS_TO_SEARCH = 5;
+const START_DATE = "20230524";
+const DAYS_TO_SEARCH = 2;
 
 export const napaliAvailabilityHandler: LambdaHandler<
   AppSyncResolverEvent<void>,
